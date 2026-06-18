@@ -1,0 +1,23 @@
+# Python
+__pycache__/
+*.pyc
+*.pyo
+
+# Model files (large)
+models/*.yml
+models/*.json
+
+# Uploaded images
+uploads/
+data/known_faces/
+
+# Test artifacts
+result_test.jpg
+
+# IDE
+.vscode/
+.idea/
+
+# OS
+Thumbs.db
+.DS_Store

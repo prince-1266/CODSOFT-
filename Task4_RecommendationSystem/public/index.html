@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Movie Recommendation System</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header class="navbar">
+        <div class="container">
+            <h1>Movie Recommendation System</h1>
+            <p>Discover movies based on content similarity and collaborative filtering.</p>
+        </div>
+    </header>
+
+    <main class="container">
+        <div class="metrics-bar">
+            <div class="metric"><strong>Total Movies:</strong> <span id="total-movies">-</span></div>
+            <div class="metric"><strong>Total Users:</strong> <span id="total-users">-</span></div>
+            <div class="metric"><strong>Total Ratings:</strong> <span id="total-ratings">-</span></div>
+        </div>
+
+        <div class="tabs">
+            <button class="tab-btn active" data-tab="search">Search Movies</button>
+            <button class="tab-btn" data-tab="collaborative">User Recommendations</button>
+            <button class="tab-btn" data-tab="hybrid">Hybrid System</button>
+        </div>
+
+        <!-- Search Tab -->
+        <section class="tab-panel active" id="panel-search">
+            <div class="card">
+                <h2>Search for a Movie</h2>
+                <div class="input-group">
+                    <input type="text" id="search-input" placeholder="e.g. Toy Story, Inception...">
+                    <span id="search-spinner" class="spinner" style="display:none;"></span>
+                </div>
+                <div id="search-results" class="results-list"></div>
+            </div>
+
+            <div id="similar-section" class="card" style="display: none; margin-top: 20px;">
+                <h3>Movies Similar To: <span id="selected-movie-info" class="text-primary"></span></h3>
+                <div class="movie-grid" id="similar-movies-grid"></div>
+            </div>
+        </section>
+
+        <!-- Collaborative Tab -->
+        <section class="tab-panel" id="panel-collaborative">
+            <div class="card">
+                <h2>User-Based Recommendations</h2>
+                <div class="input-group">
+                    <select id="collab-user-select" class="form-select">
+                        <option value="">Select a User ID...</option>
+                    </select>
+                    <button id="collab-recommend-btn" class="btn btn-primary">Get Recommendations</button>
+                </div>
+            </div>
+            
+            <div id="collab-rated-section" class="card" style="display: none; margin-top: 20px;">
+                <h3>Movies Recently Rated by This User</h3>
+                <div class="rated-list" id="collab-rated-movies"></div>
+            </div>
+            
+            <div id="collab-recs-section" class="card" style="display: none; margin-top: 20px;">
+                <h3>Recommended for You</h3>
+                <div class="movie-grid" id="collab-recs-grid"></div>
+            </div>
+        </section>
+
+        <!-- Hybrid Tab -->
+        <section class="tab-panel" id="panel-hybrid">
+            <div class="card">
+                <h2>Hybrid Recommendations</h2>
+                <div class="input-group">
+                    <select id="hybrid-user-select" class="form-select">
+                        <option value="">Select a User ID...</option>
+                    </select>
+                    <button id="hybrid-recommend-btn" class="btn btn-primary">Get Recommendations</button>
+                </div>
+            </div>
+
+            <div id="hybrid-rated-section" class="card" style="display: none; margin-top: 20px;">
+                <h3>Movies Recently Rated by This User</h3>
+                <div class="rated-list" id="hybrid-rated-movies"></div>
+            </div>
+
+            <div id="hybrid-recs-section" class="card" style="display: none; margin-top: 20px;">
+                <h3>Top Recommendations (Hybrid)</h3>
+                <div class="movie-grid" id="hybrid-recs-grid"></div>
+            </div>
+        </section>
+    </main>
+
+    <div id="loading-overlay" class="overlay" style="display:none;">
+        <div class="spinner-large"></div>
+        <p>Loading...</p>
+    </div>
+
+    <footer>
+        <p>Created for the CodSoft AI Internship — Task 4</p>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>

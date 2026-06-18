@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tic-Tac-Toe AI — CODSOFT Task 2</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <div class="glow glow-1"></div>
+    <div class="glow glow-2"></div>
+
+    <div class="app">
+        <h1>Tic-Tac-Toe <span class="ai-text">AI</span></h1>
+        <p class="sub">CODSOFT Task 2 — Minimax + Alpha-Beta Pruning</p>
+
+        <!-- Scores -->
+        <div class="scores">
+            <div class="score blue"><span id="scoreX">0</span><small>You (X)</small></div>
+            <div class="score gray"><span id="scoreDraw">0</span><small>Draw</small></div>
+            <div class="score pink"><span id="scoreO">0</span><small>AI (O)</small></div>
+        </div>
+
+        <!-- Status -->
+        <div id="status" class="status">Your turn!</div>
+
+        <!-- Board -->
+        <div class="board" id="board">
+            <div class="cell" data-i="0"></div>
+            <div class="cell" data-i="1"></div>
+            <div class="cell" data-i="2"></div>
+            <div class="cell" data-i="3"></div>
+            <div class="cell" data-i="4"></div>
+            <div class="cell" data-i="5"></div>
+            <div class="cell" data-i="6"></div>
+            <div class="cell" data-i="7"></div>
+            <div class="cell" data-i="8"></div>
+        </div>
+
+        <!-- Buttons -->
+        <button class="btn-new" onclick="resetGame()">New Game</button>
+
+        <!-- Difficulty -->
+        <div class="diff">
+            <button class="d" data-d="easy" onclick="setDiff('easy')">Easy</button>
+            <button class="d" data-d="medium" onclick="setDiff('medium')">Medium</button>
+            <button class="d active" data-d="hard" onclick="setDiff('hard')">Unbeatable</button>
+        </div>
+
+        <!-- Info -->
+        <div class="info">
+            <p><strong>Minimax</strong> — AI explores every possible move to pick the best one.</p>
+            <p><strong>Alpha-Beta Pruning</strong> — Skips unnecessary branches for speed.</p>
+            <p>On <em>Unbeatable</em>, the best you can do is a draw! 🤖</p>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
